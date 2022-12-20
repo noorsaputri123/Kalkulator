@@ -133,9 +133,30 @@ class _BillSplitterState extends State<BillSplitter> {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "Tip",
+                        style: TextStyle(
+                          color: Colors.grey.shade700,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Text(
+                          "\$34",
+                          style: TextStyle(
+                              color: _purple,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17.0),
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
