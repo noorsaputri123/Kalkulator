@@ -33,9 +33,24 @@ class _BillSplitterState extends State<BillSplitter> {
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Text("Total Harga"),
-                    Text("\$123"),
+                  children: <Widget>[
+                    Text(
+                      "Total Harga",
+                      style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 15.0,
+                          color: _purple),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "\$123",
+                        style: TextStyle(
+                            fontSize: 34.9,
+                            fontWeight: FontWeight.bold,
+                            color: _purple),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -154,7 +169,30 @@ class _BillSplitterState extends State<BillSplitter> {
                               fontWeight: FontWeight.bold,
                               fontSize: 17.0),
                         ),
-                      )
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Text(
+                        "$_tipPercentage%",
+                        style: TextStyle(
+                            color: _purple,
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Slider(
+                          min: 0,
+                          max: 100,
+                          activeColor: _purple,
+                          inactiveColor: Colors.grey,
+                          divisions: 10,
+                          value: _tipPercentage.toDouble(),
+                          onChanged: (double newValue) {
+                            setState(() {
+                              _tipPercentage = newValue.round();
+                            });
+                          })
                     ],
                   )
                 ],
