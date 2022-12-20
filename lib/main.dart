@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kalkulator/home.dart';
+import 'package:kalkulator/ui/home.dart';
 
 void main() {
   runApp(const MyApp());
